@@ -10,6 +10,7 @@ load_dotenv()
 # Get the secret key from environment variables
 secret_key = os.getenv("SECRET_KEY")
 
+
 # Function to fetch and format the news articles
 def get_message():
     # Define the endpoint and parameters for the NewsAPI
@@ -44,6 +45,7 @@ def get_message():
 
     # Return the formatted email message
     return message
+
 
 # Send the email with the news articles
 send_email(get_message().encode("utf8"))

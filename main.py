@@ -1,12 +1,16 @@
 import requests
+from send_email import send_email
 
-api_key = "751aa5c95c6d4ffab434a38f93f35163"
-url = "https://newsapi.org/v2/everything?q=python&from=2023-11-11&sortBy=publishedAt&apiKey=751aa5c95c6d4ffab434a38f93f35163"
+api_key = ""
+url = "https://newsapi.org/v2/everything?q=python&from=2023-11-11&sortBy=publishedAt&apiKey="
 request = requests.get(url)
 content = request.json()
 # print(content["articles"])
 
-for article in content["articles"]:
-    print(article["title"])
-    print(article["url"])
-   
+def get_message():
+    message = ""
+    for article in content["articles"]:        
+        message += article["title"] + "\n" + article["url"] + "\n\n"
+    return message
+
+send_email(get_message().encode("utf-8"))

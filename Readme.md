@@ -1,23 +1,20 @@
-# Python News API
+# Python News Emailer
 
-This is a simple Python script that uses the News API to fetch and print the latest news articles related to Python.
+This is a simple Python script that fetches news related to Python programming from the NewsAPI and sends it as an email.
 
-## Requirements
+## How to Use
+
+1. Install the required Python packages by running `pip install -r requirements.txt`.
+2. Replace the `api_key` variable in `main.py` with your NewsAPI key.
+3. Update the `send_email` function in `send_email.py` with your email credentials and recipient's email.
+4. Run the script with `python main.py`.
+
+## Dependencies
 
 - Python 3
-- `requests` library
-
-## Usage
-
-1. Install the required Python libraries with `pip install -r requirements.txt`.
-2. Run the script with `python main.py`.
-
-The script will print the title and URL of each news article.
-
-## API Key
-
-The script uses an API key for the News API. You should replace the `api_key` variable in the script with your own API key.
+- requests
+- Your email server's Python library (e.g., smtplib for Gmail)
 
 ## Note
 
-The script currently fetches news articles from a specific date. You may want to modify the `url` variable to change the date or other parameters.
+This script is set to fetch news from a specific date. You may want to update the date in the URL to fetch the latest news.

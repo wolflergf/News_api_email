@@ -1,20 +1,39 @@
-# Python News Emailer
+# Python News Fetcher
 
-This is a simple Python script that fetches news related to Python programming from the NewsAPI and sends it as an email.
+This is a Python script that fetches the top 20 news articles related to Python programming from the NewsAPI.
 
-## How to Use
+## Installation
 
-1. Install the required Python packages by running `pip install -r requirements.txt`.
-2. Replace the `api_key` variable in `main.py` with your NewsAPI key.
-3. Update the `send_email` function in `send_email.py` with your email credentials and recipient's email.
-4. Run the script with `python main.py`.
+1. Clone the repository
+2. Install the required packages using pip:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+Set your NewsAPI key in a .env file:
+
+```bash
+SECRET_KEY=your_newsapi_key
+```
+
+Run the script:
+
+```bash
+python main.py
+```
+
+The script will fetch the top 20 news articles related to Python programming and send them to the specified email address.
 
 ## Dependencies
 
-- Python 3
+- Python 3.6+
 - requests
-- Your email server's Python library (e.g., smtplib for Gmail)
+- python-dotenv
+- send_email (local module)
 
-## Note
+## License
 
-This script is set to fetch news from a specific date. You may want to update the date in the URL to fetch the latest news.
+This project is licensed under the terms of the MIT license.
